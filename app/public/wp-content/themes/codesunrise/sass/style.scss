@@ -1,0 +1,380 @@
+/*!
+Theme Name: Base Theme
+Theme URI: http://underscores.me/
+Author: CreateApe
+Author URI: https://createape.com/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: codesunrise
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Base Theme is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/base";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
+// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+@import "plugins/jetpack/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.site-title {
+    display: none;
+}
+
+#site-navigation {
+    display: none;
+}
+
+@font-face {
+    font-family: NewYork;
+    src: url('fonts/NewYork.ttf');
+}
+
+* {
+    font-family: Montserrat;
+}
+
+p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+h1 {
+    font-family: 'NewYork';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 85px;
+    color: #000000;
+}
+
+h2 {
+    font-family: 'NewYork';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 85px;
+    text-align: center;
+    color: #000000;
+}
+
+h3 {
+    font-family: 'NewYork';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+button {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 15px 60px;
+
+    &:hover{
+        opacity: 0.7;
+    }
+}
+
+.hero-section {
+    min-height: 100vh;
+
+    .nav-section {
+        padding-top: 60px;
+
+        ul {
+            margin: 0;
+        
+            li {
+                &:hover {
+                    opacity: 0.6;
+                }
+
+                a {
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 28px;
+                    color: #000000;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .hero-content {
+        margin-top: 100px;
+
+        @media (max-width: 767px) {
+            .hero-image-wrapper{
+                margin-top: 50px;
+            }
+        }
+
+        @media (min-width: 767px) {
+            .hero-image-wrapper{
+                margin-top: -130px;
+            }
+        }
+
+        .hero-text {
+            button {
+                padding: 15px 60px;
+                color: white;
+            }
+        }
+
+        .hero-image {
+            padding: 40px;
+            border: 1px solid #000000;
+            border-radius: 100% 100% 0 0;
+        }
+    }
+}
+
+.company-section {
+    margin: 150px auto 0 auto;
+
+    .company-section-header {
+        p {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+    }
+    .company-section-body{
+        margin: 100px 0 0 0;
+    }
+
+    @media (max-width: 991px) {
+        .company-section-body {
+            .row {
+                flex: 1;
+
+                img {
+                    flex: 1;
+                }
+
+                h3 {
+                    margin: 20px 0;
+                }
+
+                p {
+                    margin: 40px 0;
+                }
+            }
+
+            .row + .row {
+                margin-top: 100px;
+                padding-bottom: 100px;
+            }
+        }
+
+    }
+
+    @media (min-width: 991px) {
+        .company-section-body{
+
+            .row + .row {
+                margin-top: 100px;
+                padding-bottom: 100px;
+            }
+
+            @media (min-width: 991px) {
+                .row + .row {
+                    flex-direction: row-reverse;
+                }
+            }
+
+            .row {
+                min-height: 400px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                & > img {
+                    flex: 0.4;
+                }
+
+                & > div {
+                    flex: 0.6;
+                    margin-left: 80px;
+                }
+            
+                img {
+                    width: 500px;
+                    display: inline;
+                }
+
+                p {
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+}
+
+.services-section {
+    padding: 120px 0 0 0;
+  
+    .services-header {
+      h2 {
+        text-align: left;
+        width: 100%;
+      }
+    }
+  
+    ul {
+      width: 100%;
+      list-style-type: none;
+      margin: 80px 0 0 0;
+      padding: 0 0 200px 0;
+  
+      li {
+        cursor: default;
+        &:first-child {
+          border-top: 1px solid black;
+        }
+  
+        padding: 20px 0;
+        border-bottom: 1px solid black;
+  
+        img {
+          position: absolute;
+          display: none;
+        }
+      }
+
+      @media (min-width: 991px) {
+        li:hover {
+            ~ li {
+            opacity: 0.5;
+            }
+    
+            img {
+                right: 70px;
+                z-index: 200;
+                display: inline;
+                position: absolute;
+            }
+        }
+        }
+
+      @media (min-width: 1600px) {
+        li:hover {
+            ~ li {
+            opacity: 0.5;
+            }
+    
+            img {
+                right: 350px;
+                z-index: 200;
+                display: inline;
+                position: absolute;
+            }
+        }
+        }
+  
+      li:not(:hover) {
+        &:hover {
+          ~ li {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  
